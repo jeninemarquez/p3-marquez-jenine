@@ -19,8 +19,7 @@ const template = `
     `;
     
     
-    document.header.innerHTML = template;
-    document.footer.innerHTML = template;
+    document.body.innerHTML = template;
     }
 }
 

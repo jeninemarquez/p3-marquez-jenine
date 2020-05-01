@@ -1,3 +1,5 @@
+import { generateKeyPair } from "crypto"
+
 class lunchGenerator {
     constructor() {
         this.lunchArray = [
@@ -51,7 +53,28 @@ class lunchGenerator {
                 lunchImage: '..images/skillet-chili.jpg',
                 lunchLink: 'https://www.allrecipes.com/recipe/13092/skillet-chili'
             },
-        ]
+        ];
+    }
+
+    randomize() {
+        for (let i = this.lunchArray.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * i)
+            let k = this.lunchArray[i]
+            this.lunchArray[i] = this.lunchArray[j]
+            this.lunchArray[j] = k                          
+        }
+    }
+    
+    generate() {
+        window.onload = () => {
+            const button = document.getElementById('button');
+            button.addEventListener('click',() => {
+                document.getElementById('name-placeholder').innerHTML = this.lunchArray[0].lunchName;
+                document.getElementById('image-placeholder').setAttribute('src',this.lunchArray[0].lunchImage);
+                document.getElementById('link-placeholder').setAttribute('src',this.lunchArray[0].lunchLink);
+            });
+        }
+    
     }
 }
 
