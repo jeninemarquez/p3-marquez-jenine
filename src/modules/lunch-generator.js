@@ -71,7 +71,7 @@ class lunchGenerator {
             button.addEventListener('click',() => {
                 document.getElementById('name-placeholder').innerHTML = this.lunchArray[0].lunchName;
                 document.getElementById('image-placeholder').setAttribute('src',this.lunchArray[0].lunchImage);
-                document.getElementById('link-placeholder').setAttribute('src',this.lunchArray[0].lunchLink);
+                document.getElementById('link-placeholder').setAttribute('href',this.lunchArray[0].lunchLink);
             });
         }
     
