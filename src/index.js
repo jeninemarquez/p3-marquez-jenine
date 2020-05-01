@@ -14,11 +14,12 @@ class App {
 
     renderTemplate() {
 const template = `
-    <h1>${header.title}</h1>
-    <p> This is a test! </p>
-    <p>${footer.footer}</p>
-    ` ;
-
+    <h1>${header.headerLogo}</h1>
+    <p>${footer.footerText}</p>
+    `;
+    
+    
+    document.header.innerHTML = template;
     document.footer.innerHTML = template;
     }
 }
