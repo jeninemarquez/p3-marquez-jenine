@@ -57,25 +57,29 @@ class lunchGenerator {
     }
 
     randomize() {
+        let i,j,k;
         for (let i = this.lunchArray.length - 1; i > 0; i--) {
             let j = Math.floor(Math.random() * i)
             let k = this.lunchArray[i]
             this.lunchArray[i] = this.lunchArray[j]
             this.lunchArray[j] = k                          
-        }
-    }
+        };
+    };
     
     generate() {
         window.onload = () => {
-            const button = document.getElementById('button');
-            button.addEventListener('click',() => {
+        const button = document.getElementById('upper-box');
+        button.addEventListener('click', () => {
+                this.randomize();
+                document.getElementById("lower-box").classList.add('show');
                 document.getElementById('name-placeholder').innerHTML = this.lunchArray[0].lunchName;
                 document.getElementById('image-placeholder').setAttribute('src',this.lunchArray[0].lunchImage);
                 document.getElementById('link-placeholder').setAttribute('href',this.lunchArray[0].lunchLink);
-            });
+            }
+                )};
         }
     
     }
-}
+
 
 export const lunch = new lunchGenerator();
